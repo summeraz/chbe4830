@@ -21,9 +21,10 @@ def visualize(compound, box=None, verbose=False):
     ax.set_zlim([box.mins[2] - 0.125, box.maxs[2] + 0.125])
     volume = np.linalg.norm(box.lengths)
 
-    colors = {'C': 'cyan', 'H': 'white', 'O': 'red', 'Si': 'yellow'}
+    colors = {'C': 'cyan', 'H': 'white', 'O': 'red', 'Si': 'yellow',
+              'F': 'magenta'}
     size = {'C': 1250/volume, 'H': 400/volume, 'O': 1300/volume,
-            'Si': 2000/volume}
+            'Si': 2000/volume, 'F': 1000/volume}
 
     n_particles = compound.n_particles
     for i, pos in enumerate(compound.xyz):
